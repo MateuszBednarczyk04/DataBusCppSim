@@ -6,18 +6,51 @@
 # przejście do kolejnego polecenia wykonuje się klawiszem enter
 # wpisanie 'q' i enter spowoduje zamknięcie programu
 # wpisanie 'n' spowoduje przejście w tryb pracy bez zatrzymania
-# linia 0
+
+# Instrukcja 000: Wczytaj liczbę A -> RA
 00000000
-10100100 # Inp -> RA
-10101000 # Inp -> RB
-01001100 # RB -> RC
-# linia 1; RC=RA xor RB
-00000010 M=1, S3=0
-00110010 # RA -> R1; S2=1, S1=0
-01010100 # RB -> R2; S0=0
-10001100 # Alu -> RC
-# linia 2; RC=RA or RB
-00000010 M=1, S3=0
-00110011 # RA -> R1; S2=1, S1=1
-01010110 # RB -> R2; S0=1
-10001100 # Alu -> RC
+10100100
+00000100
+00000100
+
+# Instrukcja 001: Wyświetl RA -> RWY
+00000000
+00100000
+00000000
+00111000
+
+# Instrukcja 010: Wczytaj stałą 2 -> RB (ustaw 0010 na klawiaturze)
+00000000
+10101000
+00001000
+00001000
+
+# Instrukcja 011: RA = RA + 2 (przez ALU), wynik -> RA
+00000000
+00110001
+01010110
+10000101
+
+# Instrukcja 100: Wyświetl RA -> RWY (kopia 001)
+00000000
+00100000
+00000000
+00111000
+
+# Instrukcja 101: Wczytaj stałą 2 -> RB (kopia 010)
+00000000
+10101000
+00001000
+00001000
+
+# Instrukcja 110: RA = RA + 2 (kopia 011)
+00000000
+00110001
+01010110
+10000101
+
+# Instrukcja 111: Wyświetl RA -> RWY (kopia 001)
+00000000
+00100000
+00000000
+00111000
