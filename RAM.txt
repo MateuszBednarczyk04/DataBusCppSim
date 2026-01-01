@@ -1,56 +1,40 @@
-# komentarz należy zacząć od #
-# każda linia powinna posiadać łącznie 8 zer lub jedynek
-# wpisanie innej wartości spowoduje stan nieustalony
-# linie danych wykraczające poza rozmiar pamięci nie zostaną wczytane
-# dla pustych linii zachowanie jest niezdefiniowane
-# przejście do kolejnego polecenia wykonuje się klawiszem enter
-# wpisanie 'q' i enter spowoduje zamknięcie programu
-# wpisanie 'n' spowoduje przejście w tryb pracy bez zatrzymania
-
-# Instrukcja 000: Wczytaj pierwszą liczbę A -> RA
-00000000
+# instrukcja 1 wczytanie A i B
 10100100
-00000100
-00000100
-
-# Instrukcja 001: Wczytaj drugą liczbę B -> RB
-00000000
 10101000
-00001000
-00001000
-
-# Instrukcja 010: C = A + B, wynik -> RWY
-00000000
+00100100
+01001000
+# instrukcja 2 C = A + B
+00110000
+01010101
 00110001
-01010110
-10011001
-
-# Instrukcja 011: Przepisz A=B (RB -> RA)
-00000000
-01010100
-00001000
-00001000
-
-# Instrukcja 100: Przepisz B=C (RWY -> RB)
-00000000
-11011000
-00000000
-00000000
-
-# Instrukcja 101: D = A + B (nowe), wynik -> RWY
-00000000
+10001100
+# instrukcja 3 aktualizacja A i B, wypisanie C
+01000100
+01101000
+01011000
+00100100
+# instrukcja 4 D = A + B -> C
+00110000
+01010101
 00110001
-01010110
-10011001
-
-# Instrukcja 110: Przepisz A=B (RB -> RA)
-00000000
-01010100
-00001000
-00001000
-
-# Instrukcja 111: Przepisz B=C (RWY -> RB)
-00000000
-11011000
-00000000
-00000000
+10001100
+# instrukcja 5 aktualizacja A i B, wypisanie D
+01000100
+01101000
+01011000
+00100100
+# instrukcja 6 E = A + B -> C
+00110000
+01010101
+00110001
+10001100
+# instrukcja 7 aktualizacja A i B, wypisanie E
+01000100
+01101000
+01011000
+00100100
+# instrukcja 8 liczenie bez wypisania wyniku
+00110000
+01010101
+00110001
+10001100

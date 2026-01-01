@@ -1,56 +1,15 @@
-# komentarz należy zacząć od #
-# każda linia powinna posiadać łącznie 8 zer lub jedynek
-# wpisanie innej wartości spowoduje stan nieustalony
-# linie danych wykraczające poza rozmiar pamięci nie zostaną wczytane
-# dla pustych linii zachowanie jest niezdefiniowane
-# przejście do kolejnego polecenia wykonuje się klawiszem enter
-# wpisanie 'q' i enter spowoduje zamknięcie programu
-# wpisanie 'n' spowoduje przejście w tryb pracy bez zatrzymania
-
-# Instrukcja 000: Wczytaj liczbę A -> RA
+# A -> RA, B -> RB
 00000000
 10100100
-00000100
-00000100
-
-# Instrukcja 001: Wyświetl RA -> RWY
-00000000
-00100000
-00000000
-00111000
-
-# Instrukcja 010: Wczytaj stałą 2 -> RB (ustaw 0010 na klawiaturze)
-00000000
 10101000
-00001000
-00001000
-
-# Instrukcja 011: RA = RA + 2 (przez ALU), wynik -> RA
+00000000
+# R1 -> ALU,  R2 -> ALU, ALU(RA, RB)
 00000000
 00110001
-01010110
-10000101
-
-# Instrukcja 100: Wyświetl RA -> RWY (kopia 001)
-00000000
-00100000
+01010111
+10000100
+# RI = RC
 00000000
 00111000
-
-# Instrukcja 101: Wczytaj stałą 2 -> RB (kopia 010)
+01100000
 00000000
-10101000
-00001000
-00001000
-
-# Instrukcja 110: RA = RA + 2 (kopia 011)
-00000000
-00110001
-01010110
-10000101
-
-# Instrukcja 111: Wyświetl RA -> RWY (kopia 001)
-00000000
-00100000
-00000000
-00111000

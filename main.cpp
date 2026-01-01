@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-const std::string RAMfilename = "RAM.txt";
+const std::string RAMfilename = "/Users/mateuszbednarczyk/Desktop/uklady_cyfrowe/DataBusCppSim/RAM1.txt";
 typedef uint8_t bitType;
 
 class microcycle
