@@ -1,40 +1,62 @@
-# instrukcja 1 wczytanie A i B
+# ZADANIE 2
+# Wczytanie pierwszej liczby z klawiatury do rejestru A
+# Input (5) -> RA (1)
 10100100
+00000000
+00000000
+00000000
+# Wczytanie drugiej liczby z klawiatury do rejestru B
+# Input (5) -> RB (2)
 10101000
-00100100
-01001000
-# instrukcja 2 C = A + B
+00000000
+00000000
+00000000
+# Przesłanie liczb do ALU, wykonanie dodawania, zapis w buforze C
+# RA -> R1 (przygotowanie składnika 1)
 00110000
+# RB -> R2 (składnik 2) + bit sterujący ALU
 01010101
-00110001
+# Czekanie na ALU (stabilizacja wyniku) + bity sterujące (CMD: ADD)
+00000010
+# Wynik z ALU -> RC (zapis sumy w buforze)
 10001100
-# instrukcja 3 aktualizacja A i B, wypisanie C
+# Wypisanie wyniku i przesunięcie liczb (stare B staje się nowym A, wynik staje się nowym B)
+# RC -> Output (Wypisz wynik na ekran)
+01111000
+# RB -> RA (Stara liczba B idzie do A)
 01000100
+# RC -> RB (Nowa suma z bufora C idzie do B)
 01101000
-01011000
-00100100
-# instrukcja 4 D = A + B -> C
+00000000
+# To samo co Instr 2, ale na nowych wartościach w A i B
+# RA -> R1
 00110000
+# RB -> R2
 01010101
-00110001
+# Wait/ALU Setup
+00000010
+# ALU -> RC
 10001100
-# instrukcja 5 aktualizacja A i B, wypisanie D
+# To samo co Instr 3
+# RC -> Output
+01111000
+# RB -> RA
 01000100
+# RC -> RB
 01101000
-01011000
-00100100
-# instrukcja 6 E = A + B -> C
+00000000
+# RA -> R1
 00110000
+# RB -> R2
 01010101
-00110001
+# Wait/ALU Setup
+00000010
+# ALU -> RC
 10001100
-# instrukcja 7 aktualizacja A i B, wypisanie E
+# RC -> Output
+01111000
+# RB -> RA
 01000100
+# RC -> RB
 01101000
-01011000
-00100100
-# instrukcja 8 liczenie bez wypisania wyniku
-00110000
-01010101
-00110001
-10001100
+00000000
